@@ -1,0 +1,10 @@
+{
+    "request":{
+        "subject":"Mi api no anda",
+        "description":"prueba creacion",
+        "email_ids_to_notify":["andrews@zmail.com"],
+        "udf_fields":{
+            "udf_char2" : "+595982437942"
+        }
+    }
+}
