@@ -42,12 +42,18 @@ const validarBodyPostTicket = ( req = request , res = response , next) =>{
             msg : 'Phone(Obligatory) not found',
             status : 400
         });
-    };
-    let characters = /[@.]/;
-    if( !characters.test(req.body.request.email_ids_to_notify) ){
+    }else if( !req.body.request.udf_fields.udf_char2 ){
+        return res.status(400).json({
+            msg : 'Phone(Obligatory) not found',
+            status : 400
+        });
+    };;
+    let punto = /[.]/;
+    let arroba = /[@]/;
+    if( !punto.test( session.email ) || !arroba.test( session.email ) ){
         return res.status(400).json({
             msg : 'Value given for email is not valid',
-            status : 400
+            status: '400'
         });
     }
     next();
