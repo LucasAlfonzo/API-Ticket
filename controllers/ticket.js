@@ -10,7 +10,6 @@ const path = 'https://ssdsrl.sdpondemand.manageengine.com/api/v3/requests';
  * Obtener Ticket
  * @param {*} req   Request 
  * @param {*} res   Response
- * @returns 
  */
 const getTicket = async(req = request, res = response) => {
     //SE EXTRAE LA VARIABLE ID QUE VIENE COMO PARAMETRO EN LA PETICION
@@ -146,6 +145,7 @@ const getTicket = async(req = request, res = response) => {
             msg : 'Error'
         });
     }else{
+        apiResponseData.requests = apiResponseData.requests[0];
         res.json({
             statusResponse,
             apiResponseData
@@ -153,12 +153,10 @@ const getTicket = async(req = request, res = response) => {
     }
 }
 
-
 /**
  * Obtener Ticket
  * @param {*} req   Request 
  * @param {*} res   Response
- * @returns 
  */
 const getTicketLong = async(req = request, res = response) => {
     //SE EXTRAE LA VARIABLE ID QUE VIENE COMO PARAMETRO EN LA PETICION
